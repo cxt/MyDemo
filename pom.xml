@@ -154,6 +154,10 @@
 
     <modules>
         <module>admin</module>
+        <module>model</module>
+        <module>util</module>
+        <module>dao</module>
+        <module>service</module>
     </modules>
 
 

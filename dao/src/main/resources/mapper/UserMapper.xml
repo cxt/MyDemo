@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cxt.dao.UserMapper">
+    <select id="getUserByUid" resultType="com.cxt.model.User" parameterType="long">
+        select
+          uid,
+          name,
+          password,
+          age
+        from t_user where uid = #{uid}
+    </select>
+    <select id="getUserByName" resultType="com.cxt.model.User" parameterType="String">
+        select
+          uid,
+          name,
+          password,
+          age
+        from t_user where name = #{name}
+    </select>
+    <select id="listAll" resultType="com.cxt.model.User">
+        select
+          uid,
+          name,
+          password,
+          age
+        from t_user
+    </select>
+    <select id="countAll" resultType="long" >
+        select
+          count(*)
+        from t_user
+    </select>
+    <insert id="insert" parameterType="com.cxt.model.User" useGeneratedKeys="true" keyProperty="user.uid">
+        insert into t_user (name,age,password)
+        values (#{name},#{age},#{password})
+    </insert>
+    <delete id="delete" parameterType="long">
+        delete from t_user
+          where
+            uid = #{uid}
+    </delete>
+    <update id="update" parameterType="com.cxt.model.User">
+        update t_user
+          <if test="name != null">
+              set name = #{name} ,
+          </if>
+          <if test="age != null">
+              age = #{age} ,
+          </if>
+          <if test="password != null">
+              password = #{password}
+          </if>
+        where uid = #{uid}
+    </update>
+</mapper>

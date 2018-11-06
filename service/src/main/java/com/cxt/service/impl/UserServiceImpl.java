@@ -1,7 +1,6 @@
 package com.cxt.service.impl;
 
 import com.cxt.dao.UserMapper;
-import com.cxt.dao.impl.UserMapperMysqlImpl;
 import com.cxt.model.User;
 import com.cxt.service.IUserService;
 import org.apache.commons.lang3.StringUtils;
@@ -18,7 +17,7 @@ import java.util.List;
 public class UserServiceImpl implements IUserService {
 
     @Autowired
-    private UserMapperMysqlImpl userMapper;
+    private UserMapper userMapper;
 
     @Override
     public User getUserByUid(long uid) {

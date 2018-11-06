@@ -1,5 +1,6 @@
 package com.cxt.dao;
 
+import com.cxt.exception.UnImplementException;
 import com.cxt.model.User;
 
 import java.util.List;

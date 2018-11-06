@@ -165,13 +165,6 @@
             <version>2.9.0</version>
         </dependency>
 
-        <!--spring-data-redis 工具包-->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-redis</artifactId>
-            <version>1.8.16.RELEASE</version>
-        </dependency>
-
         <!--fastjson-->
         <dependency>
             <groupId>com.alibaba</groupId>

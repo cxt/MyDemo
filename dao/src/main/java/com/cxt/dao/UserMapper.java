@@ -1,62 +1,22 @@
 package com.cxt.dao;
 
-import com.cxt.exception.UnImplementException;
 import com.cxt.model.User;
 
 import java.util.List;
-
+  
+  
 /**
- * author Administrator
- * date   2018/10/22
+ * 处理用户的数据操作接口
+ * @author liuyazhuang
+ *
  */
-public interface UserMapper {
-    /**
-     * get user by uid
-     * @return User
-     */
-    User getUserByUid(long uid);
-
-    /**
-     * get user by name
-     * @param name
-     * @return User
-     */
-    User getUserByName(String name);
-
-    /**
-     * list all users
-     *
-     * @return users
-     */
-    List<User> listAll();
-
-    /**
-     * count users
-     *
-     * @return count
-     */
-    long countAll();
-
-    /**
-     * insert a user
-     *
-     * @param user
-     * @return
-     */
-    boolean insert(User user);
-
-    /**
-     * delete user by uid
-     *
-     * @param uid
-     * @return
-     */
-    boolean delete(long uid);
-
-    /**
-     * update user
-     * @param user
-     * @return
-     */
-    boolean update(User user);
-}
+public interface UserMapper {  
+      
+    Integer insert(User u);
+      
+    List<User> findAll();  
+      
+    List<User> findByUserIds(List<Integer> userIds);  
+      
+  
+}  
